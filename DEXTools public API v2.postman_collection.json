@@ -1,0 +1,668 @@
+{
+	"info": {
+		"_postman_id": "3b89245c-464f-4392-a017-77f57fd494cf",
+		"name": "DEXTools public API v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "244692"
+	},
+	"item": [
+		{
+			"name": "blockchain",
+			"item": [
+				{
+					"name": "blockchain - info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/blockchain/{{chain}}",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"blockchain",
+								"{{chain}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "blockchain LIST",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/blockchain/?sort=name&order=asc",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"blockchain",
+								""
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "name",
+									"description": "name"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exchange / DEX",
+			"item": [
+				{
+					"name": "exchange - info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/dex/{{chain}}/{{factoryAddress}}",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"dex",
+								"{{chain}}",
+								"{{factoryAddress}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "exchange - LIST",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/dex/{{chain}}?sort=name&order=asc&page=0&pageSize=20",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"dex",
+								"{{chain}}"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "name",
+									"description": "name/tvl/pools/creationBlock/volume24h/swaps24h"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pool",
+			"item": [
+				{
+					"name": "pool - info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/pool/{{chain}}/{{poolAddress}}",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pool",
+								"{{chain}}",
+								"{{poolAddress}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pool - liquidity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/pool/{{chain}}/{{poolAddress}}/liquidity",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pool",
+								"{{chain}}",
+								"{{poolAddress}}",
+								"liquidity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pool - score",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/pool/{{chain}}/{{poolAddress}}/score",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pool",
+								"{{chain}}",
+								"{{poolAddress}}",
+								"score"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pool - price",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/pool/{{chain}}/{{poolAddress}}/price",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pool",
+								"{{chain}}",
+								"{{poolAddress}}",
+								"price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pool - LIST",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/pool/{{chain}}?sort=creationTime&order=desc&from=2023-12-01T00:00:00.000Z&to=2099-01-01T00:00:00.000Z&page=0&pageSize=20",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"pool",
+								"{{chain}}"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "creationTime"
+								},
+								{
+									"key": "order",
+									"value": "desc"
+								},
+								{
+									"key": "from",
+									"value": "2023-12-01T00:00:00.000Z"
+								},
+								{
+									"key": "to",
+									"value": "2099-01-01T00:00:00.000Z"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "token",
+			"item": [
+				{
+					"name": "token address info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/token/{{chain}}/{{address}}",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"token",
+								"{{chain}}",
+								"{{address}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token chain info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/token/{{chain}}?sort=socialsInfoUpdated&order=desc&from=2023-12-01T00:00:00.000Z&to=2099-11-01T00:00:00.000Z&page=0&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"token",
+								"{{chain}}"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "socialsInfoUpdated"
+								},
+								{
+									"key": "order",
+									"value": "desc"
+								},
+								{
+									"key": "from",
+									"value": "2023-12-01T00:00:00.000Z"
+								},
+								{
+									"key": "to",
+									"value": "2099-11-01T00:00:00.000Z"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token address info - pools",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/token/{{chain}}/{{address}}/pools/?sort=creationTime&order=desc&from=2000-12-01T00:00:00.000Z&to=2099-11-01T00:00:00.000Z&page=0&pageSize=10",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"token",
+								"{{chain}}",
+								"{{address}}",
+								"pools",
+								""
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "creationTime"
+								},
+								{
+									"key": "order",
+									"value": "desc"
+								},
+								{
+									"key": "from",
+									"value": "2000-12-01T00:00:00.000Z"
+								},
+								{
+									"key": "to",
+									"value": "2099-11-01T00:00:00.000Z"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token address info - locks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/token/{{chain}}/{{address}}/locks",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"token",
+								"{{chain}}",
+								"{{address}}",
+								"locks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token address info - info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/token/{{chain}}/{{address}}/info",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"token",
+								"{{chain}}",
+								"{{address}}",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token address info - price",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/token/{{chain}}/{{address}}/price",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"token",
+								"{{chain}}",
+								"{{address}}",
+								"price"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ranking",
+			"item": [
+				{
+					"name": "ranking - hotpools",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/ranking/{{chain}}/hotpools",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"ranking",
+								"{{chain}}",
+								"hotpools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ranking - gainers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/ranking/{{chain}}/gainers",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"ranking",
+								"{{chain}}",
+								"gainers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ranking - losers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-Key",
+								"value": "{{apiKey}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api-dev.dextools.io/v2/ranking/{{chain}}/losers",
+							"protocol": "https",
+							"host": [
+								"api-dev",
+								"dextools",
+								"io"
+							],
+							"path": [
+								"v2",
+								"ranking",
+								"{{chain}}",
+								"losers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
